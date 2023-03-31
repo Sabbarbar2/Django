@@ -8,7 +8,7 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context  = super().get_context_data(**kwargs)
-        context['posts'] = Post.objects.all()
+        context['posts'] = Post.objects.all().order_by('-id') # the - before the item in order by means descending
         return context
 
 
