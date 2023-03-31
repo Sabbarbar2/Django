@@ -4,6 +4,9 @@
 {% block title %}This is the title of my homepage{% endblock %}
 
 {% block body %}
+
+    <a href="{% url 'feed:post' %}">Add a new post &rarr;</a>
+    <hr>
     {% for post in posts %}
         <a href="{% url 'feed:detail' post.id %}" style="display:inline-block;">
         {{ post.text }}<br>
